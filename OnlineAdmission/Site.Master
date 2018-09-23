@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="OnlineAdmission.Site1" %>
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <title>Sri Vani Vidyashala High School</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        </asp:ContentPlaceHolder>
+    </head>
+    <body class="body-color">
+        <form id="form1" runat="server" name="form1">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <nav class="navbar navbar-default navbar-fixed-top">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="#">
+                                    <img alt="Brand" src="Images/SVVHS.png" />
+                                </a>
+                                <ul class="nav nav-pills">
+                                    <li role="presentation" class="active">
+                                        <a href="HomePage.aspx">Home</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="About.aspx">About</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">  Admission 
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="Admission.aspx">Admission</a>
+                                            </li>
+                                            <li>
+                                                <a href="AdmissionDetails.aspx">Admission Details</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="MaintenanceLogin.aspx">Maintenance</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </asp:ContentPlaceHolder>
+                <div class="right-side">
+                    <asp:ContentPlaceHolder ID="Right" runat="server">
+                        <div id="marquee-div" class="scroll-page">
+                        <center>
+                            <h4>Latest Updates</h4>
+                            <br />
+                            <br />
+                            <marquee class="marquee-mp" direction="up" onmouseover="this.stop()" onmouseout="this.start()" scrolldelay="300">
+                                <asp:Literal ID="LiteralValue" runat="server"></asp:Literal>
+                            </marquee>
+                        </center>
+                        </div>
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="main-content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                <div class="bottom-side">
+                    <asp:ContentPlaceHolder ID="Bottom" runat="server">
+                        <br />
+                        <hr />
+                                    Site best viewed in Google Chrome / Mozilla
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
